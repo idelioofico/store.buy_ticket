@@ -1,25 +1,68 @@
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<!-- Header Start-->
+<header class="header">
+    <div class="header-inner">
+        <nav class="navbar navbar-expand-lg bg-barren barren-head navbar fixed-top justify-content-sm-start pt-0 pb-0">
+            <div class="container">	
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </span>
+                </button>
+                <a class="navbar-brand order-1 order-lg-0 ml-lg-0 ml-2 me-auto" href="index.html">
+                    <div class="res-main-logo">
+                        <img src="images/logo-icon.svg" alt="">
+                    </div>
+                    <div class="main-logo" id="logo">
+                        <img src="images/logo.svg" alt="">
+                        <img class="logo-inverse" src="images/dark-logo.svg" alt="">
+                    </div>
+                </a>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <div class="offcanvas-logo" id="offcanvasNavbarLabel">
+                            <img src="images/logo-icon.svg" alt="">
+                        </div>
+                        <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <div class="offcanvas-body">
+                        {{-- <div class="offcanvas-top-area">
+                            <div class="create-bg">
+                                <a href="create.html" class="offcanvas-create-btn">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span>Criar Evento</span>
+                                </a>
+                            </div>
+                        </div>							 --}}
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Início</a>
+                            </li>
+                           
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('home')}}">Explorar eventos</a>
+                            </li>
+                            
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Ajuda
+                                </a>
+                                <ul class="dropdown-menu dropdown-submenu">
+                                    <li><a class="dropdown-item" href="{{route('faq')}}">Perguntas Frequentes</a></li>
+                                    <li><a class="dropdown-item" href="{{route('help_center')}}">Centro de Ajuda</a></li>
+                                    <li><a class="dropdown-item" href="{{route('contact_us')}}">Contacte-nos</a></li>
+                                </ul>
+                            </li>
+                       
+                        </ul>
+                    </div>
+                    
+                </div>
 
-    <title>{{ env('APP_NAME') ?: 'Vibratix' }}</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    <link rel="preload" as="image"
-        imageSrcSet="https://dcm1eeuyachdi.cloudfront.net/fit-in/16x16/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 16w, https://dcm1eeuyachdi.cloudfront.net/fit-in/32x32/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 32w, https://dcm1eeuyachdi.cloudfront.net/fit-in/48x48/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 48w, https://dcm1eeuyachdi.cloudfront.net/fit-in/64x64/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 64w, https://dcm1eeuyachdi.cloudfront.net/fit-in/96x96/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 96w, https://dcm1eeuyachdi.cloudfront.net/fit-in/128x128/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 128w, https://dcm1eeuyachdi.cloudfront.net/fit-in/256x256/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 256w, https://dcm1eeuyachdi.cloudfront.net/fit-in/384x384/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 384w, https://dcm1eeuyachdi.cloudfront.net/fit-in/448x448/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 448w, https://dcm1eeuyachdi.cloudfront.net/fit-in/512x512/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 512w, https://dcm1eeuyachdi.cloudfront.net/fit-in/576x576/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 576w, https://dcm1eeuyachdi.cloudfront.net/fit-in/640x640/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 640w, https://dcm1eeuyachdi.cloudfront.net/fit-in/750x750/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 750w, https://dcm1eeuyachdi.cloudfront.net/fit-in/828x828/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 828w, https://dcm1eeuyachdi.cloudfront.net/fit-in/1080x1080/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 1080w, https://dcm1eeuyachdi.cloudfront.net/fit-in/1200x1200/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 1200w, https://dcm1eeuyachdi.cloudfront.net/fit-in/1920x1920/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 1920w, https://dcm1eeuyachdi.cloudfront.net/fit-in/2048x2048/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 2048w, https://dcm1eeuyachdi.cloudfront.net/fit-in/3840x3840/filters:quality(100):format(webp)/static/nextjs/images/default-banner.png 3840w"
-        imageSizes="(max-width: 576px) 576px, (max-width: 768px) 768px, (min-width: 768px) 400px, 1200px" />
-    <meta name="next-head-count" content="45" />
-    <link rel="preload" href="https://doavub8d2uzrx.cloudfront.net/static/nextjs/fonts/lato-regular-400.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href="https://doavub8d2uzrx.cloudfront.net/static/nextjs/fonts/lato-regular-700.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href="https://doavub8d2uzrx.cloudfront.net/static/nextjs/fonts/lato-black.woff2" as="font"
-        type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href="https://doavub8d2uzrx.cloudfront.net/static/nextjs/fonts/handsel.woff2" as="font"
-        type="font/woff2" crossorigin="anonymous" />
-    <!-- Styles -->
-
-</head>
+            </div>
+        </nav>
+        <div class="overlay"></div>
+    </div>
+</header>
+<!-- Header End-->
